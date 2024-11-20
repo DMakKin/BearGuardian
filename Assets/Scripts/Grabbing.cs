@@ -34,7 +34,7 @@ public class Grabbing : MonoBehaviour
     {
         if (other.TryGetComponent(out IInteractable interactObj))
         {
-            Debug.Log("Yep!");
+            Debug.Log("I see something to catch!");
 
             this.interactObj = interactObj;
             grabbedObjRig = other.gameObject.GetComponent<Rigidbody>(); 
@@ -43,12 +43,14 @@ public class Grabbing : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        
+        Debug.Log("Nothing to catch!");
+        grabbedObjRig = null;
+        interactObj = null; 
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) & interactObj != null)
         {
 
             interactObj.Interact();            

@@ -11,6 +11,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private Vector3 dragOffset;
     [SerializeField] private float dragForce = 1f; // Коэффициент силы перетаскивания, можно настроить
     private Vector3 grabPoint;
+
+    [SerializeField] float valueOfAngularDrag;
     //[SerializeField] private KeyCode button = KeyCode.E;
 
     // Start is called before the first frame update
@@ -33,7 +35,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
         dragOffset = grabPoint - transform.position;
 
         //// Отключаем вращение объекта при перетаскивании
-        grabbedObjRig.angularDrag = 5f;
+        grabbedObjRig.angularDrag = valueOfAngularDrag;
         Debug.Log("isDragging" + isDragging);
    }
 
