@@ -9,7 +9,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [SerializeField] private Transform hands;
     private bool isDragging;
     private Vector3 dragOffset;
-    [SerializeField] private float dragForce = 1f; // Коэффициент силы перетаскивания, можно настроить
+    [SerializeField] private float dragForce = 1f;
     private Vector3 grabPoint;
 
     [SerializeField] float valueOfAngularDrag;
