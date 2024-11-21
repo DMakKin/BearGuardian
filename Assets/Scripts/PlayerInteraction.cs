@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private Transform grabPoint;
+    [SerializeField] private Transform grabPoint; // Точка, где игрок держит объект
     [SerializeField] private float grabDistance;
     private GameObject heldObject;
 

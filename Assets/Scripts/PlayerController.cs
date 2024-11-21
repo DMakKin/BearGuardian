@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpForce; 
-    [SerializeField] private LayerMask groundLayer; 
-    [SerializeField] private Transform groundCheck; 
+    [SerializeField] private float moveSpeed; // Скорость движения
+    [SerializeField] private float jumpForce; // Сила прыжка
+    [SerializeField] private LayerMask groundLayer; // Слой земли
+    [SerializeField] private Transform groundCheck; // Точка проверки земли
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private float speedOfRotation;
 
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private Vector3 movement;
     private Vector3 newVelocity;
-    private Quaternion targetRotation;
     
 
     void Start()
@@ -40,14 +39,13 @@ public class PlayerController : MonoBehaviour
         newVelocity = new(movement.x, rb.velocity.y, movement.z);
         rb.velocity = newVelocity;
 
-
         if (moveInputX != 0 || moveInputZ != 0)
         {
-            //transform.forward = new Vector3(moveInputX, 0, moveInputZ);
+            //transform.forward = new Vector3(moveInputX, 0, moveInputZ); // Поворачиваем персонажа в сторону движения
 
             Vector3 targetDirection = new Vector3(moveInputX, 0, moveInputZ);
                         
-            targetRotation = Quaternion.LookRotation(targetDirection);
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * speedOfRotation);
         }
     }
@@ -64,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     //void Animate()
     //{
-    //    animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-    //    animator.SetBool("IsGrounded", isGrounded);
+    //    animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // Скорость для анимации бега
+    //    animator.SetBool("IsGrounded", isGrounded); // Условие для анимации прыжка
     //}
 }
