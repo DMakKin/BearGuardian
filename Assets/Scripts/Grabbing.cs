@@ -12,22 +12,28 @@ interface IInteractable
 public class Grabbing : MonoBehaviour
 {
     [SerializeField] private Transform InteractorSource;
-    private CapsuleCollider viewingRadius;
-    private MovementInput1 thisMI1;
+    private SphereCollider viewingRadius;
+    //private MovementInput1 thisMI1;
+
+    private PlayerController controller;
 
     //private Rigidbody thisRigidbody;
     private IInteractable interactObj;    
     private Rigidbody grabbedObjRig;
 
-    [SerializeField] private float InteractRange;
+    //[SerializeField] private float InteractRange;
     private float denominator;
-    private float originalVelocity;
+    //private float originalVelocity;
+    private float originalSpeed;
 
     private void Start()
     {
-        viewingRadius = GetComponent<CapsuleCollider>();
-        thisMI1 = gameObject.GetComponent<MovementInput1>();
-        originalVelocity = thisMI1.Velocity;
+        viewingRadius = GetComponent<SphereCollider>();
+        //thisMI1 = gameObject.GetComponent<MovementInput1>();
+        //originalVelocity = thisMI1.Velocity;
+
+        controller = GetComponent<PlayerController>();  
+        originalSpeed = controller.moveSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,21 +49,19 @@ public class Grabbing : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Nothing to catch!");
-        grabbedObjRig = null;
-        interactObj = null; 
+        Relise();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) & interactObj != null)
+        if (Input.GetButtonDown("Interact") & interactObj != null)
         {
 
             interactObj.Interact();            
-            denominator = grabbedObjRig.mass + originalVelocity;
-            thisMI1.Velocity = thisMI1.Velocity / denominator;
+            denominator = grabbedObjRig.mass + originalSpeed;
+            controller.moveSpeed = controller.moveSpeed / denominator;
 
-            Debug.Log("Velocity = " + thisMI1.Velocity); 
+            Debug.Log("Speed = " + controller.moveSpeed); 
 
             //Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             //if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
@@ -77,11 +81,21 @@ public class Grabbing : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Interact"))
         {
-            thisMI1.Velocity = originalVelocity;
-            Debug.Log("Velocity = " + thisMI1.Velocity);
+            //thisMI1.Velocity = originalVelocity;
+            //Debug.Log("Velocity = " + thisMI1.Velocity);
+            Relise();
+            controller.moveSpeed = originalSpeed;
+            Debug.Log("Speed = " + controller.moveSpeed);
         }
-       
+
+    }
+
+    private void Relise()
+    {
+        Debug.Log("Nothing to catch!");
+        grabbedObjRig = null;
+        interactObj = null;
     }
 }

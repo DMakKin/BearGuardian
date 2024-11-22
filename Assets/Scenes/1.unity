@@ -392,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 388327171}
   serializedVersion: 2
   m_LocalRotation: {x: -9.353635e-10, y: 0.9992684, z: -0.03824456, w: -0.000000024439533}
-  m_LocalPosition: {x: 10.929999, y: 0.04133606, z: 7.866}
+  m_LocalPosition: {x: 10.929999, y: 0.04133606, z: 7.8608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -979,7 +979,7 @@ Transform:
   m_GameObject: {fileID: 1136607414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.042, z: 0.115}
+  m_LocalPosition: {x: 0, y: -0.006, z: 0.115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1308,7 +1308,7 @@ Transform:
   m_GameObject: {fileID: 1786882555}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000000011963104, y: 0.9992684, z: -0.038244564, w: -0.00000002444952}
-  m_LocalPosition: {x: 10.929999, y: 0.04133606, z: 7.866}
+  m_LocalPosition: {x: 10.929999, y: 0.04133606, z: 7.8608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1535,7 +1535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 1649533806}
-  InteractRange: 0.5
 --- !u!136 &1984078191
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1873,7 +1872,8 @@ GameObject:
   - component: {fileID: 7018815503440294256}
   - component: {fileID: 7018815503440294255}
   - component: {fileID: 7018815503440294257}
-  - component: {fileID: 7018815503440294258}
+  - component: {fileID: 7018815503440294260}
+  - component: {fileID: 7018815503440294259}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -2842,7 +2842,7 @@ Transform:
   m_GameObject: {fileID: 1480996150870182828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.74, y: -0.20866394, z: -6.446}
+  m_LocalPosition: {x: -10.74, y: -0.20866394, z: -6.4408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3223,7 +3223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ff1c4b6e592e44db2e9b66d0411ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 1
   jumpForce: 2
   groundLayer:
     serializedVersion: 2
@@ -3231,7 +3231,28 @@ MonoBehaviour:
   groundCheck: {fileID: 2025709975}
   groundCheckRadius: 0.2
   speedOfRotation: 5
---- !u!114 &7018815503440294258
+--- !u!135 &7018815503440294259
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480996150870182828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.071339205
+  m_Center: {x: -0.00022268295, y: -0.024336055, z: 0.11395359}
+--- !u!114 &7018815503440294260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3240,11 +3261,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480996150870182828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e132c4c378c9cf144b3dbaff7fe71c30, type: 3}
+  m_Script: {fileID: 11500000, guid: 454c3e35f947a594db3925e7b5de6b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabPoint: {fileID: 1136607415}
-  grabDistance: 0.5
+  InteractorSource: {fileID: 1136607415}
 --- !u!33 &7094122003585637060
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3688,12 +3708,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091922428227735294}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 758b33ecd380f334ca9a490e764434cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hands: {fileID: 1649533806}
+  hands: {fileID: 1136607415}
   dragForce: 100
   valueOfAngularDrag: 10
 --- !u!1 &8176684443235413270

@@ -43,7 +43,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Interact"))
         {
             isDragging = false;
             grabbedObjRig.angularDrag = 0.05f;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed; // Скорость движения
+    public float moveSpeed; // Скорость движения
     [SerializeField] private float jumpForce; // Сила прыжка
     [SerializeField] private LayerMask groundLayer; // Слой земли
     [SerializeField] private Transform groundCheck; // Точка проверки земли

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\CSharp\\Unity\\Teddy guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|c:\\csharp\\unity\\teddy guard\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\grabbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grabbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\playerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\grabbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grabbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|c:\\csharp\\unity\\teddy guard\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\movementinput1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA5EF00F-FCD2-EE47-7A90-B2019F3DB209}|Assembly-CSharp.csproj|C:\\CSharp\\Unity\\Teddy guard\\assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,68 +46,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PlayerInteraction.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\PlayerInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerInteraction.cs",
               "ToolTip": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\PlayerInteraction.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerInteraction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T15:51:17.569Z"
+              "WhenOpened": "2024-11-21T15:51:17.569Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T15:06:14.174Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Grabbing.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\Grabbing.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Grabbing.cs",
               "ToolTip": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\Grabbing.cs",
               "RelativeToolTip": "Assets\\Scripts\\Grabbing.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwC0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:19:39.944Z"
+              "WhenOpened": "2024-11-10T16:19:39.944Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "InteractableObject.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
               "ToolTip": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwDUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:31:38.675Z"
+              "WhenOpened": "2024-11-10T16:31:38.675Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MovementInput1.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\MovementInput1.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementInput1.cs",
               "ToolTip": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\MovementInput1.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovementInput1.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEUAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T16:31:23.529Z"
+              "WhenOpened": "2024-11-03T16:31:23.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\CSharp\\Unity\\Teddy guard\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
