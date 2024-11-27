@@ -1,98 +1,75 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.ExceptionServices;
 using UnityEngine;
 
-public class Dragging : MonoBehaviour
+
+public class Dragging : MonoBehaviour, IInteractable
 {
-    //    private Vector3 offset;          // Смещение от точки захвата до центра объекта
-    //    private Camera mainCamera;       // Камера, используемая для преобразования координат
-
-    //    void Start()
-    //    {
-    //        mainCamera = Camera.main;    // Получаем основную камеру
-    //    }
-
-    //    void OnMouseDown()
-    //    {
-    //        // Вычисляем смещение от точки клика до центра объекта
-    //        offset = transform.position - GetMouseWorldPosition();       
-
-    //    }
-
-    //    void OnMouseDrag()
-    //    {
-    //        // Перемещаем объект с учетом смещения
-    //        transform.position = GetMouseWorldPosition() + offset;      
-
-    //    }
-
-    //    private Vector3 GetMouseWorldPosition()
-    //    {
-    //        // Получаем координаты мыши в мировом пространстве
-    //        Vector3 mouseScreenPosition = Input.mousePosition;
-    //        mouseScreenPosition.z = mainCamera.WorldToScreenPoint(transform.position).z; // Глубина объекта относительно камеры
-    //        return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-    //    }
-
-    private Rigidbody rbObj;
+    private Rigidbody grabbedObjRig;
     [SerializeField] private Transform hands;
-    private Camera mainCamera;
     private bool isDragging;
     private Vector3 dragOffset;
     [SerializeField] private float dragForce = 1f; // Коэффициент силы перетаскивания, можно настроить
-    private Vector3 dragPoint;
+    private Vector3 grabPoint;
 
+    [SerializeField] float valueOfAngularDrag;
+    //[SerializeField] private KeyCode button = KeyCode.E;
+
+    // Start is called before the first frame update
     void Start()
     {
-        rbObj = GetComponent<Rigidbody>();
-        mainCamera = Camera.main;
+        grabbedObjRig = GetComponent<Rigidbody>();        
     }
-
-    void OnMouseDown()
-    {
+   
+    
+    public void Interact()
+   {
+        Debug.Log("Catch!");
         // Переход в режим перетаскивания
         isDragging = true;
 
-        // Получаем координаты точки захвата на объекте в мировом пространстве
-        //dragPoint = GetMouseWorldPosition();
-        dragPoint = hands.position;
+        // Получаем координаты точки захвата на объекте в мировом пространстве        
+        grabPoint = hands.position;
 
         // Вычисляем смещение относительно точки захвата, чтобы тянуть за определенную точку
-        dragOffset = dragPoint - transform.position;
+        dragOffset = grabPoint - transform.position;
 
-        // Отключаем вращение объекта при перетаскивании
-        rbObj.angularDrag = 5f;
-    }
+        //// Отключаем вращение объекта при перетаскивании
+        grabbedObjRig.angularDrag = valueOfAngularDrag;
+        Debug.Log("isDragging" + isDragging);
+   }
 
-    void OnMouseDrag()
+    
+
+    private void Update()
     {
-        if (isDragging)
+        if (Input.GetButtonUp("Interact"))
         {
-            // Обновляем позицию точки захвата на основе положения мыши
-            //dragPoint = GetMouseWorldPosition() - dragOffset;
-            dragPoint = hands.position - dragOffset;
-
-            // Вычисляем направление и силу
-            Vector3 forceDirection = dragPoint - transform.position;
-
-            // Применяем силу к объекту в направлении захвата
-            rbObj.AddForce(forceDirection * dragForce, ForceMode.Acceleration);
+            isDragging = false;
+            grabbedObjRig.angularDrag = 0.05f;
+            Debug.Log("isDragging" + isDragging);
         }
     }
 
-    void OnMouseUp()
+    private void FixedUpdate() 
     {
-        // Отключаем режим перетаскивания и сбрасываем свойства
-        isDragging = false;
-        rbObj.angularDrag = 0.05f;
-    }
+        if (isDragging)
+        {
+            // Обновляем позицию точки захвата на основе положения рук           
+            grabPoint = hands.position - dragOffset;
 
-    //private Vector3 GetMouseWorldPosition()
-    //{
-    //    // Преобразуем экранные координаты мыши в мировые координаты
-    //    Vector3 mouseScreenPosition = Input.mousePosition;
-    //    mouseScreenPosition.z = mainCamera.WorldToScreenPoint(transform.position).z;
-    //    return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-    //}
+            // Вычисляем направление и силу
+            Vector3 forceDirection = grabPoint - transform.position;
+
+            // Применяем силу к объекту в направлении захвата
+            grabbedObjRig.AddForce(forceDirection * dragForce, ForceMode.Acceleration);
+
+
+            //// Новая позиция для точки захвата (с учетом смещения)
+            //Vector3 targetPosition = hands.position - dragOffset;
+
+            //// Жестко перемещаем объект к точке захвата
+            //grabbedObjRig.MovePosition(targetPosition);
+        }
+    }
 }

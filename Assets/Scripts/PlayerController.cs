@@ -33,11 +33,15 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        moveInputX = Input.GetAxis("Horizontal");
-        moveInputZ = Input.GetAxis("Vertical");
-        movement = new Vector3(moveInputX, 0f, moveInputZ) * moveSpeed;
-        newVelocity = new(movement.x, rb.velocity.y, movement.z);
-        rb.velocity = newVelocity;
+        if (isGrounded)
+        {
+            moveInputX = Input.GetAxis("Horizontal");
+            moveInputZ = Input.GetAxis("Vertical");
+            movement = new Vector3(moveInputX, 0f, moveInputZ) * moveSpeed;
+            newVelocity = new(movement.x, rb.velocity.y, movement.z);
+            rb.velocity = newVelocity;
+        }
+
 
         if (moveInputX != 0 || moveInputZ != 0)
         {

@@ -365,7 +365,7 @@
 "Assets/Scripts/CameraMove.cs"
 "Assets/Scripts/Dragging.cs"
 "Assets/Scripts/Grabbing.cs"
-"Assets/Scripts/InteractableObject.cs"
+"Assets/Scripts/Lifting.cs"
 "Assets/Scripts/MovementInput1.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerInteraction.cs"
